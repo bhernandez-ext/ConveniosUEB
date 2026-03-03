@@ -530,16 +530,44 @@
       letter-spacing:.03em;
     }
 
+    /* TABLET */
     @media(max-width:1100px) {
       .top-row { grid-template-columns:1fr 1fr 1fr; }
-      .top-row .card { grid-column:span 1; }
+      .top-row > *:nth-child(4) { grid-column:span 2; }
+      .top-row > *:nth-child(5) { grid-column:span 1; }
     }
-    @media(max-width:800px) {
+    /* MOBILE */
+    @media(max-width:768px) {
+      .header-inner { padding:14px 16px; flex-direction:column; align-items:flex-start; gap:10px; }
+      .header-title h1 { font-size:1.25rem; }
+      .header-deco { display:none; }
+      main { padding:14px 12px 0; }
+      .top-row { grid-template-columns:1fr 1fr; }
+      .top-row > *:nth-child(4), .top-row > *:nth-child(5) { grid-column:span 2; }
+      .kpi-val { font-size:2rem; }
+      .chart-wrap { height:180px; }
+      #map { height:300px; }
+      .filters-bar { gap:8px; }
+      .fg { width:100%; }
+      .fg input, .fg select { width:100%; min-width:unset; box-sizing:border-box; }
+      .filter-count { margin-left:0; width:100%; }
+      .btn-clear { width:100%; text-align:center; }
+      .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      .conv-table { min-width:640px; font-size:.78rem; }
+      .conv-table th, .conv-table td { padding:9px 10px; }
+      .cp-grid { grid-template-columns:1fr; max-height:240px; }
       .contact-grid { grid-template-columns:1fr; }
-      .contact-col-info { border-right:none; border-bottom:1px solid rgba(255,255,255,.1); padding:0 0 28px; margin-bottom:28px; }
+      .contact-col-info { border-right:none; border-bottom:1px solid rgba(255,255,255,.1); padding:0 0 24px; margin-bottom:24px; }
       .contact-col-team { padding-left:0; }
-      .header-inner { padding:16px 18px; }
-      main { padding:16px 14px 0; }
+      .team-grid { grid-template-columns:1fr; }
+    }
+    /* SMALL MOBILE */
+    @media(max-width:480px) {
+      .top-row { grid-template-columns:1fr; }
+      .top-row > *:nth-child(4), .top-row > *:nth-child(5) { grid-column:span 1; }
+      .header-title h1 { font-size:1.1rem; }
+      .kpi-val { font-size:1.8rem; }
+      main { padding:10px 10px 0; }
     }
   </style>
 </head>
